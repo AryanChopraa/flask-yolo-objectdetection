@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alerts</title>
+</head>
+<body>
+    <h1>Alerts</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Item Name</th>
+                <th>Timestamp</th>
+                <th>Screenshot</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alert in alerts %}
+            <tr>
+                <td>{{ alert.id }}</td>
+                <td>{{ alert.item_name }}</td>
+                <td>{{ alert.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+  
+                <!-- Use url_for to generate the image source -->
+                <!-- <td><img src="{{ url_for('static', filename='images/' +"screenshot_"+ "20230924164801" + '.jpg') }}" alt="Screenshot"></td> -->
+                <td><img src="{{ url_for('static', filename='images/screenshot_20230924111940.jpg') }}" alt="Screenshot"></td>    
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
